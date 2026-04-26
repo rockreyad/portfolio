@@ -1,30 +1,45 @@
 {
-  "name": "geeky-mind",
-  "version": "0.1.0",
+  "name": "mrhasan-dev",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@types/node": "18.15.11",
-    "@types/react": "18.0.33",
-    "@types/react-dom": "18.0.11",
-    "autoprefixer": "10.4.14",
-    "dayjs": "^1.11.7",
-    "eslint": "8.38.0",
-    "eslint-config-next": "13.3.0",
-    "framer-motion": "^10.11.2",
-    "next": "13.3.0",
-    "next-themes": "^0.2.1",
-    "postcss": "8.4.21",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-icons": "^4.8.0",
-    "react-type-animation": "^3.0.1",
-    "tailwindcss": "3.3.1",
-    "typescript": "5.0.4"
-  }
+    "@vercel/analytics": "^1.4.1",
+    "@vercel/speed-insights": "^1.1.0",
+    "clsx": "^2.1.1",
+    "gray-matter": "^4.0.3",
+    "lenis": "^1.1.20",
+    "lucide-react": "^0.468.0",
+    "motion": "^11.15.0",
+    "next": "16.2.4",
+    "next-mdx-remote-client": "^2.1.10",
+    "next-themes": "^0.4.4",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "tailwind-merge": "^2.5.5"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "eslint": "^9.17.0",
+    "eslint-config-next": "16.2.4",
+    "postcss": "^8.4.49",
+    "prettier": "^3.8.3",
+    "prettier-plugin-tailwindcss": "^0.7.3",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.2"
+  },
+  "packageManager": "pnpm@9.15.0"
 }
