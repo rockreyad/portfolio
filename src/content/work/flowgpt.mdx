@@ -1,0 +1,86 @@
+---
+title: FlowGPT
+company: Kaon
+url: https://flowgpt.com
+role: Software Engineer · Full-stack
+team: Joined in the founding phase · scaled through 150+
+dates: Jun 2023 — Present
+oneLiner: Joined FlowGPT in its founding phase. Helped grow the product from ~1M to 6M users in three months — at the peak of the ChatGPT and prompt-engineering moment.
+outcome: Was part of the founding-phase team that took FlowGPT from ~1M to 6M users in three months, captured an estimated 27% of ChatGPT visitor overlap during peak, and grew the company into a multi-product organization (now Kaon) backed by Goodwater Capital and DCM Ventures.
+stack: [Next.js, tRPC, TypeScript, Tailwind, Prisma, Postgres, Redis, BullMQ, Node.js]
+metrics:
+  - { label: "User growth", value: "6M", sub: "from ~1M in first 3 months of my tenure" }
+  - { label: "ChatGPT visitor capture", value: "27%", sub: "internally tracked, peak overlap" }
+  - { label: "Pre-Series A", value: "$10M", sub: "led by Goodwater Capital + DCM" }
+  - { label: "Company growth", value: "150+", sub: "team size during my tenure" }
+cover: /work/flowgpt-cover.svg
+ogAccent: ember
+publishedAt: 2024-09-01
+updatedAt: 2026-04-26
+---
+
+<CaseSection eyebrow="Context" title="Joined FlowGPT in the founding phase.">
+
+FlowGPT — now part of Kaon — is an open-source AI app creator and prompt-sharing platform. [TechCrunch described it](https://techcrunch.com/2024/02/26/flowgpt-is-the-wild-west-of-genai-apps/) as a _"sort of app store for generative AI models like Google's Gemini, Anthropic's Claude, Meta's Llama 2 and OpenAI's DALL-E 3, as well as front-end experiences for those models."_ It was co-founded by Jay Dang (CEO, UC Berkeley CS dropout) and Lifan Wang (former engineering manager at Amazon) in 2023, headquartered in Berkeley.
+
+I joined in **June 2023**, in the founding phase, while the team was still small enough to fit in one room. The product hadn't yet hit its inflection point. ChatGPT and prompt engineering were just becoming a mainstream conversation, and FlowGPT was about to ride that wave harder than almost anyone else.
+
+</CaseSection>
+
+<CaseSection eyebrow="The wave" title="From ~1M to 6M users in three months.">
+
+In my first three months on the team, FlowGPT scaled from approximately **one million to six million users**. That growth wasn't linear — it was the curve you get when a product hits a cultural moment correctly. ChatGPT was the rocket; FlowGPT became the marketplace people used alongside it once they realized "good prompts" was a real category.
+
+During the peak overlap, internal tracking showed FlowGPT capturing roughly **27% of ChatGPT visitor traffic** — i.e., a meaningful fraction of people leaving or supplementing ChatGPT were ending up on us. That's the single most important number from this period: it's not "we got users," it's "we became part of the loop people were already running."
+
+</CaseSection>
+
+<CaseSection eyebrow="Role" title="What full-stack actually meant on this team.">
+
+Engineering at FlowGPT during that growth phase wasn't _one feature, ship, repeat_. It was: pick the highest-leverage thing this week, design it end-to-end, ship it, instrument it, and move on. Day-to-day that meant working across:
+
+- **Marketplace surfaces** — prompt detail, search, discovery — that had to render fast under SEO load and hold up while the user table was 6× larger than the month before
+- **Authenticated chat surfaces** — streaming, optimistic updates, retry behaviour, the kind of latency-sensitive flow where every shortcut becomes an incident later
+- **Backend plumbing on a T3 stack** — Next.js + tRPC + Prisma against Postgres, with Redis for caching and BullMQ for background jobs (recommendations, indexing, embeddings, the heavy operations you don't want in the request path)
+- **Reviewing PRs and pushing for changes that hold up under load** — at our growth rate, "works on my machine" had a half-life of about 48 hours
+
+</CaseSection>
+
+<CaseSection eyebrow="Stack" title="What we ran on, and why it earned its place.">
+
+- **Next.js + tRPC + Prisma** — the T3 stack core. End-to-end type safety reduces production incidents more than almost any other engineering investment at startup scale.
+- **Postgres** as source of truth, **Redis** for hot-path caching and rate limits, **BullMQ** for background work that doesn't belong in the request cycle.
+- **TypeScript everywhere**, strict mode, no `any`-bailouts in code review.
+- **Tailwind** for UI, with a discipline-based component layer rather than a third-party design system — the team chose ergonomics over ceremony.
+
+The lesson I carry forward: stack choice matters a fraction as much as the discipline you apply to it. The T3 stack at FlowGPT shipped well because we treated session validation, idempotency, and error boundaries as features, not fixtures.
+
+</CaseSection>
+
+<CaseSection eyebrow="Company milestones during my tenure" title="Things FlowGPT — not me alone — pulled off.">
+
+These are company-level achievements, not individual ones. I list them because being part of a team that hits this level is itself a credential — it&apos;s the environment that shaped the work I shipped:
+
+- **$10M pre-Series A round** led by **Goodwater Capital**, with existing backer **DCM Ventures** — [reported by TechCrunch](https://techcrunch.com/2024/02/26/flowgpt-is-the-wild-west-of-genai-apps/) in February 2024
+- **Featured in The New York Times** — the company and the prompt-marketplace category
+- **Featured on a Times Square billboard** — Manhattan-tier brand placement during the peak prompt-engineering moment
+- **Hugging Face collaboration** — partnership work bridging FlowGPT&apos;s prompt marketplace with the open-model ecosystem
+- **Sponsored by Google** — sponsorship and credit support during a strategic phase
+- **Team grew from a small founding group to 150+ during my tenure** — the company expanded from a single product into a multi-product organization that became Kaon
+
+I include this section because the alternative — leaving these out — undersells the environment I worked in. Being on a team that hits press, billboard, and platform-partnership milestones inside an 18-month window teaches you things working on a stable team for five years doesn&apos;t.
+
+</CaseSection>
+
+<CaseSection eyebrow="What I'd defend in a senior interview" title="Three things I learned that I still apply.">
+
+- **Growth phases don&apos;t reward cleverness; they punish slop.** When the user table is doubling every six weeks, every shortcut you took yesterday becomes a 2am page tomorrow. I write more defensively than most engineers because of FlowGPT.
+- **The right architecture decision is the one you can defend in code review three months later.** Moving prompt detail from CSR to RSC + ISR, choosing Postgres full-text over a managed search service, picking BullMQ over a roll-your-own queue — none of these were the _smartest_ choice in isolation. They were the choices the team could maintain.
+- **A small founding team is a different organism than a 150-person company, and you have to learn both.** I joined a startup; I left a structured engineering org. The transition is one of the most useful things I&apos;ve learned that doesn&apos;t appear on any tech-stack list.
+
+</CaseSection>
+
+<CaseQuote cite="Senior Engineer, FlowGPT">
+  Hasan consistently demonstrates strong system thinking. While working on complex features, he
+  focuses not only on implementation but also on long-term maintainability and scalability.
+</CaseQuote>

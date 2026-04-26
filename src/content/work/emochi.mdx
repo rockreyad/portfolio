@@ -1,0 +1,92 @@
+---
+title: Emochi
+company: Kaon
+url: https://emochi.com
+role: Web Full-stack
+team: Web product pod inside Kaon
+dates: 2024 — Present
+oneLiner: Took Emochi from a React Native mobile-only product to a first-class web surface. Today web DAU is approaching mobile DAU on a 10M+ download product.
+outcome: Helped take Emochi from a mobile-first product (10M+ Play Store downloads, 597K reviews, 4.3★) to a serious web product. Owned the React Native Web bridge and led the web migration from SPA to full SSR — turning the website from a stub into a surface where daily active users now approach the mobile app's.
+stack:
+  [React Native, React Native Web, Next.js, TypeScript, tRPC, Prisma, Postgres, Redis, Tailwind]
+metrics:
+  - { label: "Play Store downloads", value: "10M+", sub: "Google Play, public listing" }
+  - { label: "Play Store reviews", value: "597K", sub: "4.3★ aggregate rating" }
+  - { label: "Top character chats", value: "88M+", sub: "Squad 404 character interactions" }
+  - { label: "Web migration", value: "SPA → SSR", sub: "owned the rewrite" }
+cover: /work/emochi-cover.svg
+ogAccent: plum
+publishedAt: 2024-12-01
+updatedAt: 2026-04-26
+---
+
+<CaseSection eyebrow="Context" title="Emochi is Kaon's most successful product.">
+
+Emochi is an AI character roleplay product — _"Roleplay with unlimited AI Characters for free."_ Anime, manga, games, original characters, interactive storylines. It launched as a [React Native mobile app](https://play.google.com/store/apps/details?id=com.flow.mobile&hl=en_US) — published by FlowGPT (now Kaon) — and quickly became the company's strongest performer.
+
+The Play Store listing tells the story in three numbers: **10M+ downloads**, **597K reviews**, **4.3 stars**. Top characters on the platform — _Squad 404, Vlad (vampire husband), Shinobu Kocho_ — have racked up **40M to 88M+ chat counts** each. The product is the kind of consumer scale most engineers never get to ship at.
+
+I joined Emochi from the FlowGPT team to own the **web side** of that surface.
+
+</CaseSection>
+
+<CaseSection eyebrow="The brief" title="Make the web feel like a first-class citizen.">
+
+Emochi was mobile-first by design — the React Native codebase was the source of truth, and the web "version" started as a thin stub. That worked while the audience was 100% phone, but two things forced the question:
+
+1. **Discovery.** Search engines don't crawl SPAs the way they crawl SSR pages. As Emochi grew, the web stub was leaving real organic traffic on the table.
+2. **Cross-device users.** Power users wanted to start a chat on their phone over breakfast and continue on their laptop at work. Without web parity, the product had a ceiling.
+
+My job was to close that gap.
+
+</CaseSection>
+
+<CaseSection eyebrow="Phase 1" title="React Native Web — feature parity across surfaces.">
+
+Before any rewrite, web had to _catch up_. I worked on **React Native Web** to lift the existing native components into the browser without a parallel codebase divergence. The principle was simple: a feature that exists on the app should exist on the web on the same release cycle, sync state, and hold up the same UX promises.
+
+In practice that meant:
+
+- **Feature-by-feature parity passes.** Chat surface, character discovery, EMOCHI+ subscription flow, wallet, profile — each lifted to web with the same data layer the app uses
+- **Cross-device session continuity.** Start a chat on the app, refresh the web — same conversation, same context, no lost state
+- **Conditional rendering, not platform-fork files.** Keep one component tree, branch on the leaves where iOS / Android / Web actually differ
+
+The goal of this phase was _not_ to win on web. It was to make sure web wasn't a worse experience than mobile so we&apos;d earn the right to invest more in it.
+
+</CaseSection>
+
+<CaseSection eyebrow="Phase 2" title="When we saw potential — moved SPA to full SSR.">
+
+Once parity was real, the data got interesting. Web DAU was climbing without us pushing it. SEO was the obvious unlock. So we made the bet: take the React Native Web SPA and migrate it to a **full SSR** architecture so search engines could see what users were already finding through links and word of mouth.
+
+This was the part of the project that matters most to me as an engineer:
+
+- **Migrated rendering** from client-only to server-side, route by route, without a flag day
+- **Restructured data fetching** so the server could pre-render character pages, chat surfaces, discover feeds — instead of shipping a JS bundle that fetched everything after first paint
+- **Held the line on UX continuity.** The product _felt_ the same to users. The transformation was under the hood.
+- **Watched LCP, TTFB, and indexed page count move in the right direction** as routes shipped
+
+The web platform stack ended up looking like the rest of Kaon&apos;s playbook: **Next.js + tRPC + Prisma + Postgres**, with **Redis** for hot-path caching and **Tailwind** on the UI layer.
+
+</CaseSection>
+
+<CaseSection eyebrow="Today" title="Web DAU is approaching mobile DAU.">
+
+The current state, in one sentence: on a product with **10M+ Play Store downloads**, the **web surface now sees daily active users approaching the mobile app&apos;s**. That&apos;s not "we built a marketing site" — that&apos;s "we built a second product surface that&apos;s genuinely competing with our flagship."
+
+I&apos;m still on the team and still pushing on web growth — performance, discovery, character pages, and the parts of the product that turn web visitors into returning users. The work isn&apos;t done. The chart is still going up.
+
+</CaseSection>
+
+<CaseSection eyebrow="What I'd defend in a senior interview" title="Three lessons that earned their place.">
+
+- **React Native Web is a real strategy if you&apos;re willing to design for it.** Most teams treat RN Web as a hack. The trick is to make it a first-class compile target: build components that are platform-aware at the edges and platform-agnostic at the core.
+- **The right time to migrate from SPA to SSR is when your users are already telling you to.** We didn&apos;t rewrite the web because Hacker News told us to. We rewrote it because organic traffic was climbing, search engines were indexing wrong, and discovery was leaving money on the table. Migrations that follow user signal go better than migrations that follow architecture trends.
+- **Owning a single surface inside a multi-surface product is its own discipline.** I don&apos;t own the React Native app. I don&apos;t own the backend. I own the web. That focus has made me better at picking my battles — at recognizing what I can and can&apos;t change, and shipping accordingly.
+
+</CaseSection>
+
+<CaseQuote cite="Tech Lead, Kaon">
+  One of Hasan&apos;s biggest strengths is ownership. When he takes on a task, he sees it through
+  end-to-end — from understanding the problem to refining the final experience.
+</CaseQuote>
