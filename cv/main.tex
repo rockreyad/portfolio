@@ -1,0 +1,172 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Modified Deedy - One Page Two Column Resume
+% LaTeX Template
+% Version 1.0 (05/04/2023)
+% 
+% Author
+%Md Mahamud Hasan(https://mahamud.vercel.app)
+% Repository
+% https://github.com/rockreyad/updated-Deedy-Resume
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Known Issues:
+% 1. Overflows onto second page if any column's contents are more than the
+% vertical limit
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[]{deedy-resume-openfont}
+\usepackage{fontawesome5}
+\usepackage{fancyhdr}
+\usepackage[utf8]{inputenc}
+\usepackage{eurosym}
+ 
+\pagestyle{fancy}
+\fancyhf{}
+ 
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     LAST UPDATED DATE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lastupdated
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\namesection{Mahamud}{Hasan}{ \urlstyle{same}\href{https://mahamud.vercel.app}{\bf mahamud.vercel.app} |
+\href{mailto:hasan.jsdev@gmail.com}{\bf hasan.jsdev@gmail.com} | \bf +8801784 06 1111 | \urlstyle{same}\href{https://github.com/rockreyad}{\bf Github} |
+\urlstyle{same}\href{https://twitter.com/rockreyad}{\bf Twitter} |
+\urlstyle{same}\href{https://linkedin.com/in/rockreyad}{\bf Linkedin}} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN ONE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}[t]{0.66\textwidth} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     SKILLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Skills}
+
+\sectionsep
+\location{Front end Development:}
+JavaScript \textbullet{} React \textbullet{} Next \textbullet{} Remix \textbullet{} HTML \textbullet{} CSS\\
+\sectionsep
+\location{Back end development:}
+Express \textbullet{} NodeJs \textbullet{} MongoDB \textbullet{} Postgress \textbullet{} Supabase\\
+\sectionsep
+\location{Soft Skills:}
+TypeScript \textbullet{} TailwindCss \textbullet{} Redux \textbullet{} Git \textbullet{} Github \textbullet{} prisma \textbullet{} Mongoose \textbullet{} Firebase \textbullet{} Strapi  \textbullet{} Swagger   \\ 
+\sectionsep
+\location{Improving myself with:}
+NestJs \textbullet{} Sass \textbullet{} aws  \\
+
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     PROJECTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{PROJECTS}
+\runsubsection{E-mess Online Mess Management}
+\descript{| Back-end,Automation | Development \href{https://github.com/rockreyad/e-mess-backend}{\faIcon{external-link-alt}}}
+\location{Sep \textbf{2022 } – Ongoing}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Developed features for mess finding and joining.
+\item  Automated meal count,sheet open-close and predict cost estimation.
+\item Track all the messes to show relevant ad.
+\item The website has not been launched and funded but it's vision to launch on 2023.
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Akash Lungi E-Commerce} 
+\descript{| Full Stack \href{https://akashlungi.com}{\faIcon{external-link-alt}}}
+\location{Dec \textbf{2022 }}
+\begin{tightemize}
+\item I help an entrepreneur , converted his local business to online
+\item Buyer can select, view available products and can order
+\item Shop Seller uses strapi as back-end to modify the store and product details
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Grading System}
+\descript{| Full-Stack | RemixJs}
+\location{Nov \textbf{2022 }}
+\begin{tightemize}
+\item User role for different behaviour with Token
+\item Front-end created with remixJs, back-end using expressJs
+\item Student can enroll and course instructor submit grade on enrolled student
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Useful soft projects}
+\sectionsep \\
+From 2019 when i was studying, i developed some useful applications which are:\\
+\begin{tightemize}
+\item \textbf{Livesnap}\descript{| Mobile Application \href{https://livesnap.narc.dev} {\faIcon{external-link-alt}}  \href{https://github.com/rockreyad/LiveSnaps}{\faIcon{github}}}
+\item \textbf{Brokerage}\descript{| Desktop Application \href{https://github.com/rockreyad/Brokerage}{\faIcon{github}}} 
+\end{tightemize}
+Event planner,Mini Ludo Game, Ticket booking, Text utilities, Blog or news publisher using REST-API
+\sectionsep
+
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.33\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Education} 
+
+\subsection{IUBAT University}
+\descript{BS in Computer Science and Engineering}
+Apr 2019 — Jan 2023
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     COURSEWORK
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Coursework}
+Computer Systems \\
+Functional Programming \\
+OOP Programming \\
+Software Engineering \\
+Machine Learning \\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Experience}
+\runsubsection{Ztrios Tech and Marketing}
+\descript{| Software Engineer Intern }
+\location{Jan \textbf{2023 } – Present | Uttara-6, Dhaka}
+% \vspace{\topsep} % Hacky fix for awkward extra vertical space
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     INTERESTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Interests}
+Travelling \textbullet{} Self Improvement \textbullet{} Food
+
+
+\end{minipage}%
+\end{document}  
+\documentclass[]{article}

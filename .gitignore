@@ -52,3 +52,7 @@ coverage
 
 # os
 Thumbs.db
+
+# cv build artifacts (tectonic intermediates) and the project-local tectonic binary
+/cv/build/
+/cv/.tools/

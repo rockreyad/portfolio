@@ -59,7 +59,7 @@ export function HeroDisplay() {
               View selected work
             </Button>
           </Magnetic>
-          <Button href="/cv" variant="secondary" size="lg" external className="w-full sm:w-auto">
+          <Button href="/cv" variant="secondary" size="lg" className="w-full sm:w-auto">
             Resume
           </Button>
         </div>

@@ -15,8 +15,7 @@ const config: NextConfig = {
   },
   async redirects() {
     return [
-      { source: "/cv", destination: "/mahamud-hasan-cv.pdf", permanent: false },
-      { source: "/resume", destination: "/mahamud-hasan-cv.pdf", permanent: false },
+      { source: "/resume", destination: "/cv", permanent: false },
     ];
   },
   async headers() {
