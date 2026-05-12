@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+/* ---------- CUSTOM UTILITIES ---------- */
+/* Monaspace's italic is driven by the slnt variable axis, not a separate file.
+   Use .slant-italic on display text instead of Tailwind's italic class to avoid
+   browser faux-skewing on top of the axis. */
+@utility slant-italic {
+  font-variation-settings: "slnt" -10;
+}
+
 /* ---------- THEME TOKENS ---------- */
 @theme {
   /* Color: raw palette */
@@ -35,10 +43,12 @@
 
   --color-plum: #1a0f2e;
 
-  /* Type */
-  --font-display: "Fraunces", ui-serif, Georgia, serif;
-  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Geist Mono", ui-monospace, "SF Mono", monospace;
+  /* Type — Satoshi (sans, workhorse) + Lovato (editorial display serif)
+     + Monaspace Krypton (mono accents) + Kalmansk (one ornamental moment) */
+  --font-sans: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Lovato", ui-serif, Georgia, "Times New Roman", serif;
+  --font-mono: "Monaspace Krypton", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-accent: "Kalmansk", "Georgia", serif;
 
   --text-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem);
   --text-sm: clamp(0.875rem, 0.84rem + 0.18vw, 0.9375rem);
@@ -148,6 +158,12 @@
   *::before,
   *::after {
     box-sizing: border-box;
+  }
+  /* Geist is a single-family workhorse — without an explicit weight headings
+     default to body-400 and read as thin. Set a confident default; component
+     classes can still override. */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
   }
   html,
   body {

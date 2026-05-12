@@ -81,12 +81,12 @@ export default async function CvPage() {
       <section className="mx-auto w-full max-w-3xl px-[var(--gutter)] py-10 pb-20 sm:py-14 sm:pb-28 lg:max-w-4xl xl:max-w-5xl">
         <CvViewerShell src={PDF_PATH} />
 
-        <p className="mt-10 text-center text-[length:var(--text-xs)] text-[var(--color-fg-subtle)] sm:mt-14">
-          Text is selectable and links are clickable. Compiled from{" "}
-          <code className="rounded bg-[var(--color-bg-sunken)] px-1.5 py-0.5 font-[family-name:var(--font-mono)]">
-            cv/main.tex
-          </code>{" "}
-          with XeLaTeX.
+        <p className="mt-12 text-center font-[family-name:var(--font-mono)] text-[length:var(--text-xs)] tracking-[var(--tracking-eyebrow)] text-[var(--color-fg-subtle)] uppercase sm:mt-16">
+          <span
+            aria-hidden
+            className="mr-2 inline-block size-1 translate-y-[-3px] rounded-full bg-[var(--color-accent)]"
+          />
+          Typeset in XeLaTeX
         </p>
       </section>
     </div>

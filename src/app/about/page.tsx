@@ -97,7 +97,7 @@ export default function AboutPage() {
                 key={t.id}
                 className="rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-8"
               >
-                <blockquote className="font-[family-name:var(--font-display)] text-[length:var(--text-lg)] leading-[var(--leading-body)]">
+                <blockquote className="font-[family-name:var(--font-sans)] text-[length:var(--text-lg)] leading-[var(--leading-body)] font-medium">
                   “{t.quote}”
                 </blockquote>
                 <figcaption className="mt-6 text-[length:var(--text-sm)]">

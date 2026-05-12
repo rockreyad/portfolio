@@ -1,7 +1,7 @@
 export function CaseQuote({ children, cite }: { children: React.ReactNode; cite?: string }) {
   return (
     <figure className="my-12 border-l-2 border-[var(--color-accent)] pl-6">
-      <blockquote className="font-[family-name:var(--font-display)] text-[length:var(--text-2xl)] leading-[var(--leading-heading)]">
+      <blockquote className="font-[family-name:var(--font-sans)] text-[length:var(--text-2xl)] leading-[var(--leading-heading)] font-medium">
         “{children}”
       </blockquote>
       {cite && (

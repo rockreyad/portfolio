@@ -19,7 +19,7 @@ export function ContactBlock() {
           Let&apos;s build{" "}
           <a
             href={`mailto:${EMAIL}`}
-            className="text-[var(--color-accent)] italic underline decoration-[3px] underline-offset-[0.12em] hover:no-underline"
+            className="slant-italic text-[var(--color-accent)] underline decoration-[3px] underline-offset-[0.12em] hover:no-underline"
           >
             something
           </a>
