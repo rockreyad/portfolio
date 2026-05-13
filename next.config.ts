@@ -19,18 +19,32 @@ const config: NextConfig = {
     ];
   },
   async headers() {
+    // Security headers (CSP, HSTS, COOP, XFO, COEP-equivalent, Permissions
+    // Policy, Trusted Types) are set in `src/proxy.ts` so they can include
+    // the per-request CSP nonce. This `headers()` block only owns header
+    // policy for paths the proxy deliberately skips — namely static asset
+    // routes that need long-lived caching but don't render HTML.
     return [
       {
-        source: "/(.*)",
+        source: "/fonts/(.*)",
         headers: [
-          { key: "X-Content-Type-Options", value: "nosniff" },
-          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+          { key: "Cross-Origin-Resource-Policy", value: "same-origin" },
         ],
       },
       {
-        source: "/fonts/(.*)",
-        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
+        source: "/images/(.*)",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+          { key: "Cross-Origin-Resource-Policy", value: "same-origin" },
+        ],
+      },
+      {
+        source: "/textures/(.*)",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+          { key: "Cross-Origin-Resource-Policy", value: "same-origin" },
+        ],
       },
     ];
   },

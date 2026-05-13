@@ -118,7 +118,7 @@ export function Testimonials() {
                 onClick={() => setActive(i)}
                 aria-pressed={isActive}
                 aria-label={`Show testimonial ${i + 1} of ${items.length}: ${themeLabel(it.theme)}`}
-                className={`inline-flex items-baseline gap-1.5 px-1.5 py-1 text-[length:var(--text-xs)] tracking-[var(--tracking-eyebrow)] uppercase transition-colors ${
+                className={`inline-flex min-h-11 items-center gap-1.5 rounded-[var(--radius-sm)] px-2.5 py-2 text-[length:var(--text-xs)] tracking-[var(--tracking-eyebrow)] uppercase transition-colors ${
                   isActive
                     ? "text-[var(--color-fg)]"
                     : "text-[var(--color-fg-subtle)] hover:text-[var(--color-fg)]"

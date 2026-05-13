@@ -21,12 +21,12 @@ import { FeaturedCase } from "./featured-case";
  *   - 2+ entries → side-by-side phone showcase on accent gradient
  */
 const FEATURED_IMAGE: Record<string, string> = {
-  flowgpt: "/images/flowgpt/portrait.png",
+  flowgpt: "/images/flowgpt/portrait.avif",
 };
 
 const SPREAD_IMAGES: Record<string, string[]> = {
   emochi: ["/images/emochi/ai-chat-app.webp", "/images/emochi/talk-snap.webp"],
-  takenote: ["/images/takenote/2024.png"],
+  takenote: ["/images/takenote/2024.avif"],
 };
 
 /**

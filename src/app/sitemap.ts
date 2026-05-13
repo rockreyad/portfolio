@@ -22,16 +22,24 @@ const STATIC_ROUTES: Array<{
   { path: "/contact", changeFrequency: "yearly", priority: 0.7 },
 ];
 
+// CV mtime feeds the `/cv` sitemap entry. Each candidate path is built with
+// fully static literals so Turbopack's NFT tracer can scope the file trace
+// to the two real files instead of pessimistically tracing the whole project
+// (which happened when this used `path.join(cwd, rel)` with a loop variable).
 async function getCvLastModified(): Promise<Date> {
-  for (const rel of ["public/mahamud-hasan-cv.pdf", "cv/main.tex"]) {
-    try {
-      const s = await stat(path.join(process.cwd(), rel));
-      return s.mtime;
-    } catch {
-      continue;
-    }
+  const cwd = process.cwd();
+  try {
+    const s = await stat(path.join(cwd, "public", "mahamud-hasan-cv.pdf"));
+    return s.mtime;
+  } catch {
+    // fall through to the LaTeX source as a backup
   }
-  return new Date();
+  try {
+    const s = await stat(path.join(cwd, "cv", "main.tex"));
+    return s.mtime;
+  } catch {
+    return new Date();
+  }
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

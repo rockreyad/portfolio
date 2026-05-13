@@ -107,19 +107,57 @@ export function HeroMesh() {
       attributeFilter: ["data-theme"],
     });
 
+    // Drive the shader only while the canvas is visible AND the tab is active.
+    // The original loop ran forever, which kept the main thread busy long after
+    // the user scrolled past the hero and burned battery on the homepage.
     let raf = 0;
+    let visible = true;
+    let active = !document.hidden;
     const start = performance.now();
+
     const tick = () => {
       gl.uniform1f(uT, (performance.now() - start) / 1000);
       gl.drawArrays(gl.TRIANGLES, 0, 6);
       raf = requestAnimationFrame(tick);
     };
-    raf = requestAnimationFrame(tick);
+
+    function play() {
+      if (raf) return;
+      raf = requestAnimationFrame(tick);
+    }
+    function pause() {
+      if (!raf) return;
+      cancelAnimationFrame(raf);
+      raf = 0;
+    }
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (!entry) return;
+        visible = entry.isIntersecting;
+        if (visible && active) play();
+        else pause();
+      },
+      { rootMargin: "100px" },
+    );
+    io.observe(c);
+
+    const onVis = () => {
+      active = !document.hidden;
+      if (visible && active) play();
+      else pause();
+    };
+    document.addEventListener("visibilitychange", onVis);
+
+    play();
 
     return () => {
-      cancelAnimationFrame(raf);
+      pause();
       ro.disconnect();
       mo.disconnect();
+      io.disconnect();
+      document.removeEventListener("visibilitychange", onVis);
     };
   }, [reduced]);
 

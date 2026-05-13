@@ -15,6 +15,13 @@ const container = {
     transition: { delayChildren: delay, staggerChildren: 0.025 },
   }),
 };
+
+// Curtain-rise entrance: each token starts fully below its overflow-clipped
+// parent and slides up into place at full opacity. Triggered with `animate`
+// (not `whileInView`) so it runs on the very first frame after hydrate — the
+// IntersectionObserver delay was what hurt LCP, not the opacity tween itself
+// (Chrome counts the element from the first frame where opacity > 0, which
+// is one rAF after mount ≈ 16ms).
 const child = {
   hidden: { y: "110%", opacity: 0 },
   visible: {
@@ -36,8 +43,7 @@ export function SplitText({ text, className, by = "word", delay = 0 }: Props) {
     <m.span
       className={className}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-10%" }}
+      animate="visible"
       variants={container}
       custom={delay}
       aria-label={text}
@@ -46,7 +52,7 @@ export function SplitText({ text, className, by = "word", delay = 0 }: Props) {
         <span key={i} className="inline-block overflow-hidden align-bottom">
           <m.span variants={child} className="inline-block will-change-transform">
             {tok}
-            {by === "word" && i < tokens.length - 1 ? " " : ""}
+            {by === "word" && i < tokens.length - 1 ? " " : ""}
           </m.span>
         </span>
       ))}

@@ -108,7 +108,9 @@
   --color-bg-sunken: #ebe3d3;
   --color-fg: #0b0b0f;
   --color-fg-muted: #4d483f;
-  --color-fg-subtle: #8e877a;
+  /* Darkened from #8e877a (~2.94:1, fails AA) to #5f594d (~5.4:1, passes AA
+     for small text) so eyebrows, meta, and footer copy meet WCAG 2.1 AA. */
+  --color-fg-subtle: #5f594d;
   --color-border: color-mix(in oklab, #0b0b0f 8%, transparent);
   --color-border-strong: color-mix(in oklab, #0b0b0f 16%, transparent);
   --color-accent: #e5462a;
@@ -125,7 +127,9 @@
   --color-bg-sunken: #050507;
   --color-fg: #f4efe6;
   --color-fg-muted: #b8b0a0;
-  --color-fg-subtle: #6a6458;
+  /* Lightened from #6a6458 (~3.7:1, fails AA) to #989284 (~5.4:1, passes AA)
+     so eyebrows/meta on the dark theme also meet WCAG 2.1 AA. */
+  --color-fg-subtle: #989284;
   --color-border: color-mix(in oklab, #f4efe6 10%, transparent);
   --color-border-strong: color-mix(in oklab, #f4efe6 18%, transparent);
   --color-accent: #ef6a45;

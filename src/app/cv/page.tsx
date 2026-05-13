@@ -7,8 +7,6 @@ import { CvViewerShell } from "./cv-viewer-shell";
 
 const PDF_PATH = "/mahamud-hasan-cv.pdf";
 const PDF_FILENAME = "mahamud-hasan-cv.pdf";
-const SOURCE_FS = path.join(process.cwd(), "cv", "main.tex");
-const PDF_FS = path.join(process.cwd(), "public", "mahamud-hasan-cv.pdf");
 
 export const metadata: Metadata = buildMetadata({
   title: "CV",
@@ -17,20 +15,32 @@ export const metadata: Metadata = buildMetadata({
   path: "/cv",
 });
 
+// Unrolled to two explicit `path.join` calls with literal arguments so
+// Turbopack's NFT tracer can scope each one to a single file. The earlier
+// `for (const file of [...])` form looked dynamic to the tracer and caused
+// it to trace the whole project into this route's manifest.
+function formatDate(d: Date): string {
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  }).format(d);
+}
+
 async function getLastUpdated(): Promise<string | null> {
-  for (const file of [SOURCE_FS, PDF_FS]) {
-    try {
-      const s = await stat(file);
-      return new Intl.DateTimeFormat("en-US", {
-        month: "short",
-        day: "numeric",
-        year: "numeric",
-      }).format(s.mtime);
-    } catch {
-      continue;
-    }
+  const cwd = process.cwd();
+  try {
+    const s = await stat(path.join(cwd, "cv", "main.tex"));
+    return formatDate(s.mtime);
+  } catch {
+    // LaTeX source isn't present in production — fall back to the PDF.
   }
-  return null;
+  try {
+    const s = await stat(path.join(cwd, "public", "mahamud-hasan-cv.pdf"));
+    return formatDate(s.mtime);
+  } catch {
+    return null;
+  }
 }
 
 export default async function CvPage() {

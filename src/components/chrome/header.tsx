@@ -32,7 +32,8 @@ export function Header() {
       >
         <Link
           href="/"
-          className="px-2.5 py-1 font-[family-name:var(--font-display)] text-[length:var(--text-base)] sm:px-3"
+          aria-label="Mahamud Hasan — home"
+          className="inline-flex min-h-10 items-center px-2.5 font-[family-name:var(--font-display)] text-[length:var(--text-base)] sm:px-3"
         >
           M.H.
         </Link>
@@ -41,7 +42,7 @@ export function Header() {
           <Link
             key={n.href}
             href={n.href}
-            className="rounded-[var(--radius-pill)] px-2.5 py-1 text-[length:var(--text-sm)] text-[var(--color-fg-muted)] transition-colors hover:bg-[var(--color-bg-sunken)] hover:text-[var(--color-fg)] sm:px-3"
+            className="inline-flex min-h-10 items-center rounded-[var(--radius-pill)] px-2.5 text-[length:var(--text-sm)] text-[var(--color-fg-muted)] transition-colors hover:bg-[var(--color-bg-sunken)] hover:text-[var(--color-fg)] sm:px-3"
           >
             {n.label}
           </Link>
@@ -51,7 +52,7 @@ export function Header() {
           type="button"
           onClick={cycleTheme}
           aria-label={`Theme: ${current}. Click to switch.`}
-          className="inline-flex size-8 items-center justify-center rounded-[var(--radius-pill)] text-[var(--color-fg-muted)] transition-colors hover:bg-[var(--color-bg-sunken)] hover:text-[var(--color-fg)]"
+          className="inline-flex size-10 items-center justify-center rounded-[var(--radius-pill)] text-[var(--color-fg-muted)] transition-colors hover:bg-[var(--color-bg-sunken)] hover:text-[var(--color-fg)]"
         >
           <Icon className="size-4" aria-hidden />
         </button>

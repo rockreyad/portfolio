@@ -96,7 +96,7 @@ export function HeroDisplay() {
       <a
         href="#work"
         aria-label="Scroll to selected work"
-        className="absolute bottom-8 left-1/2 inline-flex -translate-x-1/2 items-center gap-2 font-[family-name:var(--font-mono)] text-[length:var(--text-xs)] tracking-[var(--tracking-eyebrow)] text-[var(--color-fg-muted)] uppercase transition-colors hover:text-[var(--color-fg)] sm:bottom-12"
+        className="absolute bottom-8 left-1/2 inline-flex min-h-11 -translate-x-1/2 items-center gap-2 rounded-[var(--radius-pill)] px-3 font-[family-name:var(--font-mono)] text-[length:var(--text-xs)] tracking-[var(--tracking-eyebrow)] text-[var(--color-fg-muted)] uppercase transition-colors hover:text-[var(--color-fg)] sm:bottom-12"
       >
         <ArrowDown className="size-4 motion-safe:animate-bounce" aria-hidden /> Scroll
       </a>
